@@ -48,11 +48,12 @@ def main():
     line = 0
     max_lines = 8
     oled.fill(0)
-    oled.text("Task 2.1 - press SW1", 0, 32)
+    oled.text("Task 2.1 - SW1", 0, 8)
     oled.show()
     while button_sw1.value() == 1:
         pass
 
+    oled.fill(0)
     data_list = get_data()
     peaks = PositivePeaks(data_list)
     intervals = peaks.interval()
