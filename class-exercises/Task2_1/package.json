@@ -1,0 +1,11 @@
+{
+  "urls": [
+    ["lib/filefifo.py", "http://localhost:8000/pico-lib/filefifo.py"],	
+    ["lib/ssd1306.mpy", "http://localhost:8000/pico-lib/ssd1306.mpy"],
+    ["main.py", "http://localhost:8000/pico-lib/main.py"],
+    ["sinewave_250Hz_01.txt", "http://localhost:8000/pico-lib/sinewave_250hz_01.txt"]
+  ],
+  "deps": [
+  ],
+  "version": "0.1"
+}
