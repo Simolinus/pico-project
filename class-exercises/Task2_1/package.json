@@ -3,7 +3,7 @@
     ["lib/filefifo.py", "https://raw.githubusercontent.com/Simolinus/pico-project/refs/heads/main/class-exercises/Task2_1/lib/filefifo.py"],	
     ["lib/ssd1306.mpy", "https://raw.githubusercontent.com/Simolinus/pico-project/refs/heads/main/class-exercises/Task2_1/lib/ssd1306.mpy"],
     ["main.py", "https://raw.githubusercontent.com/Simolinus/pico-project/refs/heads/main/class-exercises/Task2_1/main.py"],
-    ["sinewave_250Hz_01.txt", "raw.githubusercontent.com/Simolinus/pico-project/refs/heads/main/class-exercises/Task2_1/lib/sinewave_250Hz_01.txt"]
+    ["sinewave_250Hz_01.txt", "https://raw.githubusercontent.com/Simolinus/pico-project/refs/heads/main/class-exercises/Task2_1/sinewave_250Hz_01.txt"]
   ],
   "deps": [
   ],
