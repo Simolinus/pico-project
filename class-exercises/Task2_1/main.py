@@ -38,20 +38,24 @@ def get_data():
     return data_list
 
 def main():
+    button_sw1 = Pin(8, Pin.IN, Pin.PULL_UP)
+
     i2c = I2C(1, scl=Pin(15), sda=Pin(14), freq=400000)
     oled = SSD1306_I2C(128, 64, i2c)
-
-    data_list = get_data()
-    peaks = PositivePeaks(data_list)
-
-    intervals = peaks.interval()
 
     ts = 1000 / 250
     total = 0
     line = 0
     max_lines = 8
-
     oled.fill(0)
+    oled.text("Task 2.1 - press SW1", 0, 32)
+    oled.show()
+    while button_sw1.value() == 1:
+        pass
+
+    data_list = get_data()
+    peaks = PositivePeaks(data_list)
+    intervals = peaks.interval()
 
     for interval in intervals:
         ppi = interval * ts
