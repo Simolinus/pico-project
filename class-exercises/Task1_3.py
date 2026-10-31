@@ -56,7 +56,8 @@ def main():
             line.move_up()
 
         line.draw_oled()
-        oled.show()
+        if line.x % 8 == 0:
+            oled.show()
 
 
 if __name__ == "__main__":
