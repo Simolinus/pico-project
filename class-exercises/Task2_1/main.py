@@ -1,7 +1,7 @@
 from machine import Pin, I2C
 from ssd1306 import SSD1306_I2C
 from filefifo import Filefifo
-
+import time
 
 
 class PositivePeaks:
@@ -11,9 +11,12 @@ class PositivePeaks:
     def peak(self):
         pos_peaks = []
         for i in range(1, len(self.data_list) - 1):
-            if self.data_list[i] >= self.data_list[i-1] and self.data_list[i] > self.data_list[i+1]:
+            if (
+                self.data_list[i] >= self.data_list[i - 1]
+                and self.data_list[i] > self.data_list[i + 1]
+            ):
                 pos_peaks.append(i)
-                
+
         return pos_peaks
 
     def interval(self):
@@ -21,13 +24,14 @@ class PositivePeaks:
         intervals = []
 
         for i in range(1, len(pos_peaks)):
-            interval = pos_peaks[i] - pos_peaks[i-1]
+            interval = pos_peaks[i] - pos_peaks[i - 1]
             intervals.append(interval)
 
         return intervals
 
+
 def get_data():
-    fifo = Filefifo(10, name = "sinewave_250Hz_01.txt")
+    fifo = Filefifo(10, name="sinewave_250Hz_01.txt")
     data_list = []
 
     for _ in range(1000):
@@ -36,6 +40,7 @@ def get_data():
             data_list.append(data)
 
     return data_list
+
 
 def main():
     button_sw1 = Pin(8, Pin.IN, Pin.PULL_UP)
@@ -50,9 +55,11 @@ def main():
     oled.fill(0)
     oled.text("Task 2.1 - SW1", 0, 8)
     oled.show()
+
     while button_sw1.value() == 1:
         pass
 
+    time.sleep(0.05)
     oled.fill(0)
     data_list = get_data()
     peaks = PositivePeaks(data_list)
