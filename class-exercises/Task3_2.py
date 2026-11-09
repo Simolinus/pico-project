@@ -144,8 +144,6 @@ def draw_menu():
     oled.show()
 
 
-# Main program
-
 draw_menu()
 
 while True:
